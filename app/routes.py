@@ -70,7 +70,7 @@ def form():
               <p class="footer-link mt-2">С вопросами и предложениями писать на почту: <a href="mailto:anna.kuchko@yandex.ru" target="blank">anna.kuchko@yandex.ru</a></p>
 	      <p class="footer-link mt-2">Другие опции будут добавляться по мере возможности.</p>
               <p class="footer-link mt-2">♡♡♡БАИС-2017♡♡♡</p>
-	      <p class="footer-link mt-2"><a href="https://github.com/annakuchko/map_app" target="blank"> Source code</p>
+	      <p class="footer-link mt-2"><a href="https://github.com/annakuchko/map-app" target="blank"> Source code</p>
               <p class="footer-link mt-2 blue-font" style="font-weight: 400;">Автор проекта: Анна Кучко, 2020.</p>
        
           </div>
