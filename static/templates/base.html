@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+		 Картограмма регионов России
+	</title>
+
+    <meta name="description" content="Картограмма регионов России">
+    <meta name="author" content="Анна Кучко">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-width navbar-white ">
+            <a href="/" class="navbar-brand"><h3>Картограмма регионов России</h3></a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            </button>
+		
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                {% for main_link in main_links %}
+                <a href="{{ main_link.link }}" class="nav-item nav-link">{{ main_link.name }}</a>
+                {% endfor %}
+                {% for secondary_link in secondary_links %}
+                <a href="{{ secondary_link.link }}" class="nav-item nav-link {% if loop.index==1 %}ml-auto{% endif %}">{{ secondary_link.name }}</a>
+                {% endfor %}
+            </div>
+        </nav>
+      </div>
+    {% block stats %}{% endblock %}
+    {% block content %}{% endblock %}
+    <div class="container mt-5 pb-0 footer">
+      <nav class="navbar">
+        <div class="row" style="width: 100%;">
+          
+          
+          <div class="col-lg-3">
+              <h6 class="mt-2 mb-0 footer-link">About</h6>
+              <p class="footer-link mt-2">С вопросами и предложениями писать на почту: <a href="mailto:anna.kuchko@yandex.ru" target="blank">anna.kuchko@yandex.ru</a></p>
+              <p class="footer-link mt-2">♡♡♡БАИС-2017♡♡♡</p>
+	      <p class="footer-link mt-2"><a href="https://github.com/annakuchko/map_app" target="blank"> Source code</p>
+              <p class="footer-link mt-2 blue-font" style="font-weight: 400;">Автор проекта: Анна Кучко, 2020.</p>
+       
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.1.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>
