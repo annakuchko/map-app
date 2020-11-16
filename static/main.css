@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Quicksand:wght@400;500;600&display=swap');
+body {
+    font-family: "Montserrat";
+    font-weight: 300;
+    padding-top: 90px;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #073763;
+    margin-bottom: 0;
+}
+.medium-font {
+    font-size: 1rem;
+}
+dt {
+    font-weight: 500;
+}
+.section {
+    padding-top: 60px;
+    margin-top: -60px;
+}
+h3.main-card {
+    font-weight: 600;
+    font-size: 2rem;
+}
+h4.main-card {
+    color: #000000dd;
+    font-weight: 200;
+}
+h5.main-card {
+    color: #000000dd;
+    font-weight: 200;
+}
+.black-font {
+    color: #000000dd;
+}
+.red-font {
+    color: #990800;
+}
+.blue-font {
+    color: #073763;
+}
+.green-font {
+    color: #38761d;
+}
+.custom-font {
+    font-family: "Quicksand";
+}
+.navbar-white{
+    border-bottom: 0.05rem solid #07376388;
+    background-color: white;
+}
+.nav-link {
+    color: #073763;
+    padding-bottom: 0;
+}
+.tab-link {
+    font-size: .5rem !important;
+}
+.bk {
+    font-family: "Montserrat" !important;
+}
+.bk-tooltip {
+    font-family: "Montserrat" !important;
+}
+.bk-tooltip>div:not(:first-child) {
+    display:none;
+}
+.plot-tooltip {
+    margin: 10px;
+}
+.active {
+    color: #990800ee !important;
+}
+@media all and (min-width: 1200px) {
+    .navbar-fixed-width {
+        width: 1200px;
+        margin-left: auto;
+        margin-right:auto;
+    }
+}
+.footer {
+    border-top: 0.05rem solid #07376388;
+    background-color: white;
+}
+.footer-link {
+    font-size: .75rem;
+}
+.square {
+    height: 10px;
+    width: 10px;
+    background-color: #990800;
+    display: inline-block;
+}
