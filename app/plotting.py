@@ -26,7 +26,7 @@ def plot_map(ds, palette=cts.MAP_PALLETE, breeze=cfg.MAP_BREEZE):
     # Preparing data
     ds = GeoJSONDataSource(geojson=ds.to_json())
     tools = "pan,reset,save"
-    color_mapper = LinearColorMapper(palette=tuple(reversed(palette)))
+    color_mapper = LogColorMapper(palette=tuple(reversed(palette)))
     
     
     color_bar = ColorBar(color_mapper=color_mapper, label_standoff=18, location = (0, 0))
