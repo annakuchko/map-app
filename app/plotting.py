@@ -4,7 +4,7 @@ from bokeh.models import GeoJSONDataSource, ColorBar
 from bokeh.models import DatetimeTickFormatter, PrintfTickFormatter, NumeralTickFormatter, NumeralTickFormatter
 from bokeh.models import HoverTool, WheelZoomTool
 from bokeh.models import LogColorMapper, LinearColorMapper
-from bokeh.models import FixedTicker
+from bokeh.models import BasicTicker
 from bokeh.models import Label
 from app import config as cfg
 from app import constants as cts
@@ -28,10 +28,8 @@ def plot_map(ds, palette=cts.MAP_PALLETE, breeze=cfg.MAP_BREEZE):
     ds = GeoJSONDataSource(geojson=ds.to_json())
     tools = "pan,reset,save"
     color_mapper = LogColorMapper(palette=tuple(reversed(palette)))
-    
-    ticks = np.linspace(color_mapper.low, color_mapper.high, 5)
     color_bar = ColorBar(color_mapper=color_mapper,
-                         ticker=FixedTicker(ticks=ticks),
+                         ticker=BasicTicker(desired_num_ticks=5),
                          background_fill_alpha=0,
                          label_standoff=3,
                          location = (0, 0))
