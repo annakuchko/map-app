@@ -29,7 +29,7 @@ def plot_map(ds, palette=cts.MAP_PALLETE, breeze=cfg.MAP_BREEZE):
     color_mapper = LogColorMapper(palette=tuple(reversed(palette)))
     
     
-    color_bar = ColorBar(color_mapper=color_mapper, label_standoff=18, location = (0, 0))
+    color_bar = ColorBar(color_mapper=color_mapper, label_standoff=3, location = (0, 0))
 
 
     p = figure(tools=tools, x_range=x_range, y_range=y_range, aspect_ratio=ar,
