@@ -28,18 +28,18 @@ def plot_map(ds, palette=cts.MAP_PALLETE, breeze=cfg.MAP_BREEZE):
     ds = GeoJSONDataSource(geojson=ds.to_json())
     tools = "pan,reset,save"
     color_mapper = LogColorMapper(palette=tuple(reversed(palette)))
-    color_bar = ColorBar(color_mapper=color_mapper,
-                         ticker=BasicTicker(desired_num_ticks=5),
-                         background_fill_alpha=0,
-                         label_standoff=3,
-                         location = (0, 0))
-
+    
+    color_bar = ColorBar(color_mapper=color_mapper, major_label_text_font_size="7px",
+                     ticker=BasicTicker(desired_num_ticks=len(tuple(reversed(palette)))),
+                     label_standoff=6, border_line_color=None, location=(0, 0))
+    
 
     p = figure(tools=tools, x_range=x_range, y_range=y_range, aspect_ratio=ar,
                x_axis_location=None, y_axis_location=None, match_aspect=True)
 
     p.grid.grid_line_color = None
     p.toolbar.logo = None
+    p.add_layout(color_bar, 'right')
 
     p.patches('xs', 'ys', fill_alpha=0.7,
               fill_color={'field': 'total_color', 'transform': color_mapper},
@@ -52,7 +52,6 @@ def plot_map(ds, palette=cts.MAP_PALLETE, breeze=cfg.MAP_BREEZE):
     wheel_zoom = WheelZoomTool(zoom_on_axis=False)
     p.add_tools(wheel_zoom)
     p.toolbar.active_scroll = wheel_zoom
-    p.add_layout(color_bar, 'right')
 
     # Applying theme
     doc = curdoc()
