@@ -39,14 +39,12 @@ def plot_map(ds, palette=cts.MAP_PALLETE, breeze=cfg.MAP_BREEZE):
 
     p.grid.grid_line_color = None
     p.toolbar.logo = None
-    #p.add_layout(color_bar, 'right')
+    p.add_layout(color_bar, 'right')
 
     p.patches('xs', 'ys', fill_alpha=0.7,
               fill_color={'field': 'total_color', 'transform': color_mapper},
               line_color='gray', line_width=0.25, source=ds)
 
-    p.legend.location = "left"
-    p.legend.click_policy="mute"
     p.add_tools(HoverTool(tooltips=cts.MAP_TOOLTIP,
                           point_policy="follow_mouse",
                           toggleable=False))
