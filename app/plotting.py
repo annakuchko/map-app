@@ -45,9 +45,11 @@ def plot_map(ds, palette=cts.MAP_PALLETE, breeze=cfg.MAP_BREEZE):
               fill_color={'field': 'total_color', 'transform': color_mapper},
               line_color='gray', line_width=0.25, source=ds)
 
-    p.add_tools(HoverTool(tooltips=cts.MAP_TOOLTIP,
-                          point_policy="follow_mouse",
-                          toggleable=False))
+    p.legend.location = "top_left"
+    p.legend.click_policy="mute"
+    #p.add_tools(HoverTool(tooltips=cts.MAP_TOOLTIP,
+    #                      point_policy="follow_mouse",
+    #                      toggleable=False))
     # Adding zoom tool
     wheel_zoom = WheelZoomTool(zoom_on_axis=False)
     p.add_tools(wheel_zoom)
