@@ -51,7 +51,7 @@ def form():
         <body>
 	    <div class="container">
 	    <h2>Загрузите CSV файл</h2>
-            <p class="footer-link mt-2"> Шаблон CSV <a href="https://github.com/annakuchko/datdat/raw/main/sample_data_for_mapper_app.xlsx" target="blank"> файла</a></p>
+            <p class="footer-link mt-2"> Шаблон CSV <a href="https://github.com/annakuchko/map-app/blob/main/data/sample_data_for_mapper_app.xlsx" target="blank"> файла</a></p>
 	    <p class="footer-link mt-2"> Поля date и category не изменять. Названия регионов должны полностью совпадать. После внесения данных файл нужно сохранить как "CSV UTF-8 (разделитель -- запятая) (*.CSV)"</p>
             
             <form action="/transform" method="post" enctype="multipart/form-data">
